@@ -1,4 +1,4 @@
-# Copyright (C) 2026 STC Chain
+# Copyright (C) 2026 blocLabs.io
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-28T05:34:31+00:00\n"
+"POT-Creation-Date: 2026-09-28T05:54:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: metamask-login-addon\n"
@@ -31,12 +31,12 @@ msgstr ""
 
 #. Author of the plugin
 #: metamask-login-addon.php
-msgid "STC Chain"
+msgid "blocLabs.io"
 msgstr ""
 
 #. Author URI of the plugin
 #: metamask-login-addon.php
-msgid "https://stcchain.io"
+msgid "https://bloclabs.io"
 msgstr ""
 
 #: includes/class-metamask-admin.php:63
