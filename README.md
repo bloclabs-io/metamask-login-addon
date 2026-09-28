@@ -259,6 +259,6 @@ The [CHANGELOG](CHANGELOG.md) lists every change.
 
 GPL v2 or later. See [LICENSE](https://www.gnu.org/licenses/gpl-2.0.html).
 
-Developed by [STC Chain](https://stcchain.io).
+Developed by [blocLabs.io](https://bloclabs.io).
 
 MetaMask is a trademark of Consensys Software Inc. This plugin is not affiliated with or endorsed by Consensys.

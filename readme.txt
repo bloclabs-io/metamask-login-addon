@@ -1,5 +1,5 @@
 === MetaMask Login Add-On ===
-Contributors: stcchain
+Contributors: bloclabs
 Tags: metamask, web3, ethereum, login, sign-in with ethereum
 Requires at least: 6.5
 Tested up to: 7.1

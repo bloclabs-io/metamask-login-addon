@@ -7,8 +7,8 @@
  * Requires at least: 6.5
  * Tested up to:      7.1
  * Requires PHP:      7.4
- * Author:            STC Chain
- * Author URI:        https://stcchain.io
+ * Author:            blocLabs.io
+ * Author URI:        https://bloclabs.io
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       metamask-login-addon
