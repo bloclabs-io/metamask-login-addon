@@ -1,0 +1,12 @@
+{
+	"name": "metamask-login-addon-e2e",
+	"private": true,
+	"description": "End-to-end tests for MetaMask Login Add-On (Playwright + mocked MetaMask provider).",
+	"scripts": {
+		"test": "playwright test"
+	},
+	"devDependencies": {
+		"@playwright/test": "1.56.1",
+		"ethers": "^6.17.0"
+	}
+}

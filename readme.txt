@@ -1,192 +1,145 @@
 === MetaMask Login Add-On ===
 Contributors: stcchain
-Tags: metamask, web3, ethereum, crypto, wallet, login, authentication, blockchain
-Requires at least: 6.0
-Tested up to: 6.7
+Tags: metamask, web3, ethereum, login, sign-in with ethereum
+Requires at least: 6.5
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.0.0
+Stable tag: 3.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Secure Web3 authentication plugin that enables users to connect their MetaMask wallet and login to WordPress without passwords.
+Passwordless, phishing-resistant WordPress login with MetaMask, using Sign-In with Ethereum (EIP-4361) and real on-server signature verification.
 
 == Description ==
 
-MetaMask Login Add-On is a powerful WordPress plugin that brings Web3 authentication to your website. Allow your users to login using their MetaMask wallet instead of traditional username/password combinations.
+MetaMask Login Add-On adds a **Log in with MetaMask** button to your site. Visitors approve a free signature in their wallet and they are logged in. No passwords are needed and nothing is sent to the blockchain.
 
-= Key Features =
+= Easy to set up =
 
-* **Passwordless Login** - Users can authenticate using their MetaMask wallet
-* **Wallet Linking** - Link MetaMask addresses directly to WordPress user profiles
-* **Cryptographic Verification** - Secure signature-based authentication
-* **Rate Limiting** - Built-in protection against brute force attacks
-* **User Profile Integration** - Seamlessly integrates with WordPress user management
-* **Developer Friendly** - Extensive hooks and filters for customization
-* **REST API** - Full REST API support for headless implementations
-* **Shortcodes** - Easy integration with shortcodes
+* A **3-step setup checklist** on Settings → MetaMask Login: connect your wallet, choose where the button appears, try it.
+* **Status checks** confirm that signature verification works on your server, and flag HTTPS and other setup issues in plain language.
+* A **live preview** of the button text and style (dark, MetaMask orange, light).
+* Works on the WordPress login screen straight away. Add it anywhere else with the **MetaMask Login block** or the `[metamask_login]` shortcode.
 
-= Security Features =
+= Friendly for visitors =
 
-* Ethereum signature verification using personal_sign
-* Nonce-based CSRF protection
-* Rate limiting to prevent brute force attacks
-* IP-based request throttling
-* Secure cryptographic validation
+* Clear step-by-step messages while connecting and signing.
+* People without MetaMask get an **Install MetaMask** link on desktop and **Open in the MetaMask app** on phones.
+* Picks MetaMask even when several wallets are installed (EIP-6963).
+* Users connect, switch or disconnect their wallet from their profile, or on the front end with `[metamask_profile]`.
+* Optional automatic sign-up for new wallets, with a role you choose. Privileged roles (admins, editors, user, plugin or theme managers) are never offered.
 
-= Use Cases =
+= Secure by design =
 
-* **NFT Membership Sites** - Grant access based on wallet ownership
-* **DAO Governance** - Authenticate DAO members
-* **Web3 Communities** - Build Web3-native communities
-* **Token-Gated Content** - Restrict content to token holders
-* **DeFi Platforms** - Secure authentication for DeFi dashboards
+* **Real signature verification** (Keccak-256 + secp256k1) built in, in pure PHP. No extra PHP extensions, libraries or outside services.
+* **Sign-In with Ethereum (EIP-4361)** messages bound to your domain, so MetaMask warns users about look-alike sites.
+* **One-time challenges** that expire after 5 minutes and are tied to the browser that asked for them, which blocks replay and login CSRF.
+* Rate limiting of failed attempts, same-site-only redirects, nonces on every request and escaped output.
 
-= Shortcodes =
+= For developers =
 
-**[metamask_login]** - Display a MetaMask login button
-* `redirect` - URL to redirect after login
-* `button_text` - Custom button text
-* `button_class` - Custom CSS class
+* A REST API (`/wp-json/metamask-login/v1`: nonce, auth, link, unlink, me).
+* Filters and actions for redirects, access control (2FA, roles), usernames, the SIWE domain, client IP detection and more.
+* Theme-overridable templates.
+* Documentation: https://github.com/bloclabs-io/metamask-login-addon
 
-**[metamask_profile]** - Display wallet profile information
-* `show_address` - Show wallet address (true/false)
-* `show_balance` - Show wallet balance (true/false)
-
-= Developer Hooks =
-
-**Filters:**
-* `metamask_login_redirect` - Customize redirect URL after login
-* `metamask_login_sign_message` - Customize the signature message
-* `metamask_login_custom_signature_verify` - Custom signature verification
-* `metamask_login_default_redirect` - Default redirect URL
-
-**Actions:**
-* `metamask_login_successful` - Fired after successful login
-* `metamask_wallet_connected` - Fired when wallet is connected
-* `metamask_wallet_disconnected` - Fired when wallet is disconnected
-* `metamask_wallet_updated` - Fired when wallet address is updated
+MetaMask is a trademark of Consensys Software Inc. This plugin is not affiliated with or endorsed by Consensys.
 
 == Installation ==
 
-1. Upload the `metamask-login-addon` folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Configure settings under Settings > MetaMask Login
-4. Add MetaMask login to your site using shortcodes or the built-in login page integration
+1. Go to **Plugins → Add New Plugin → Upload Plugin**, upload the ZIP, then click **Install Now** and **Activate**.
+2. Click **Finish setup** in the notice, or open **Settings → MetaMask Login**.
+3. In step 1 click **Connect MetaMask** and approve the signature. Your account can now log in with MetaMask.
+4. Open the login screen in a private window and try **Log in with MetaMask**.
 
-= Manual Installation =
-
-1. Download the plugin ZIP file
-2. Go to WordPress Admin > Plugins > Add New
-3. Click "Upload Plugin" and select the ZIP file
-4. Click "Install Now" and then "Activate"
+Each user connects their own wallet once from **Users → Profile → MetaMask Wallet**.
 
 == Frequently Asked Questions ==
 
-= What is MetaMask? =
+= Does logging in cost gas or send a transaction? =
 
-MetaMask is a popular cryptocurrency wallet and gateway to blockchain applications. It's available as a browser extension for Chrome, Firefox, Brave, and Edge.
+No. Users only sign a text message. Nothing is sent to any blockchain.
 
-= Do users need MetaMask to use my site? =
+= Do I need GMP, BCMath or Composer? =
 
-Users only need MetaMask if they want to login using their wallet. Traditional username/password authentication continues to work alongside MetaMask login.
+No. Signature verification is built into the plugin in plain PHP. You only need a 64-bit PHP build, which every modern host provides. The settings screen runs a self-test to confirm it.
 
-= Is this secure? =
+= Do users still have passwords? =
 
-Yes! The plugin uses cryptographic signature verification to ensure only the wallet owner can authenticate. All authentication requests are protected with nonces and rate limiting.
+Yes. Normal username and password login keeps working. MetaMask is an extra way in.
 
-= Can I customize the login button? =
+= A user sees "This wallet is not connected to an account yet". =
 
-Yes! Use the shortcode attributes or WordPress hooks to customize the appearance and behavior of the login button.
+They need to log in with their password once and click **Connect MetaMask** on their profile. You can also turn on **Create accounts for new wallets** in the settings.
 
-= Does this work with WooCommerce? =
+= Which networks are supported? =
 
-Yes! The plugin integrates seamlessly with WooCommerce and any other WordPress plugin that uses standard WordPress authentication.
+All of them. Login doesn't depend on the selected network.
 
-= What blockchains are supported? =
+= Can one wallet be used for several accounts? =
 
-Currently, the plugin supports Ethereum and all EVM-compatible chains (Polygon, BSC, Avalanche, etc.) through MetaMask.
+No. Each wallet belongs to exactly one account.
 
-= Can I link multiple wallets to one account? =
+= Does it work with page caching? =
 
-Currently, each user account can be linked to one wallet address. This ensures unique authentication.
+Yes, but exclude pages that show the button from full-page caching for more than 24 hours, or visitors may see "Your session has expired".
 
-= How do I handle signature verification in production? =
+= My site is behind Cloudflare or a proxy. =
 
-For production environments, we recommend implementing proper elliptic curve cryptography libraries or using the filter hooks to integrate with external verification services.
+Rate limiting uses the connection IP by default. Use the `metamask_login_client_ip` filter to pass the real visitor IP from a header you trust.
+
+= Can I require a second factor for administrators? =
+
+Yes. Use the `metamask_login_authenticate` filter to return a `WP_Error` for users who must log in another way.
 
 == Screenshots ==
 
-1. MetaMask login button on WordPress login page
-2. Wallet connection interface in user profile
-3. Plugin settings page
-4. Users table showing connected wallets
+1. The "Log in with MetaMask" button on the WordPress login screen.
+2. Settings screen with the 3-step setup checklist, live preview and status checks.
+3. The MetaMask Wallet section on the user profile screen.
+4. The MetaMask Login block in the block editor.
 
 == Changelog ==
 
+= 3.0.0 - 2026-09-28 =
+* New: WordPress 7.1 compatibility (tested on 7.1.2). The minimum is now WordPress 6.5.
+* New: real signature verification. Pure-PHP Keccak-256 and secp256k1 recovery with no extensions needed. In 2.x signatures were never actually verified, so wallet login could not succeed.
+* New: Sign-In with Ethereum (EIP-4361) messages with domain binding, a nonce, and issued/expiry times.
+* New: one-time, server-stored challenges bound to the requesting browser (blocks replay and login CSRF).
+* New: redesigned settings screen with a setup checklist, status checks, live button preview and plain-language options.
+* New: "MetaMask Login" block (block API v3).
+* New: optional automatic sign-up for new wallets with a safe role picker.
+* New: button styles, custom button text, a custom post-login destination and a custom sign-in sentence.
+* New: EIP-6963 wallet discovery, mobile "Open in the MetaMask app" link and an install link when no wallet is found.
+* New: redesigned profile wallet card with Connect, Switch and Disconnect. Administrators can disconnect a user's wallet.
+* New: REST route `GET /me`, and `nonce` parameters for `/auth` and `/link`.
+* New: filters `metamask_login_authenticate`, `metamask_login_siwe_domain`, `metamask_login_client_ip`, `metamask_login_new_username`, `metamask_login_bind_challenge_to_cookie`, `metamask_login_show_on_login_page`, `metamask_login_template`, and actions `metamask_login_failed`, `metamask_user_registered`.
+* New: theme template overrides (`your-theme/metamask-login/`).
+* New: translation template (`languages/metamask-login-addon.pot`).
+* Improved: the browser script is rewritten in vanilla JavaScript (no jQuery) with accessible status messages.
+* Improved: settings for the login button and rate limiting now take effect (they were ignored in 2.x).
+* Improved: redirects follow `redirect_to` and the core `login_redirect` filter, allowing same-site destinations only.
+* Improved: rate limiting uses `REMOTE_ADDR` by default, so it can't be bypassed with spoofed headers.
+* Changed: the text domain is now `metamask-login-addon`.
+* Changed: uninstalling keeps wallet links unless "Delete wallet links when the plugin is deleted" is on.
+* Removed: the insecure development-mode signature bypass, the unused `/verify` REST route and the `authenticate` filter integration.
+* Fixed: login messages lost their line breaks during sanitization, so signatures could never match.
+* Fixed: a JavaScript error when the MetaMask account changed.
+* New: wallet logins run through the core `wp_authenticate_user` filter and the multisite spam check, so ban, approval and lockout plugins still apply.
+* Changed: wallet links saved by 2.x (which were never verified) are set aside, and users confirm them with one click.
+* Tests: 19 PHPUnit tests (crypto) and 17 Playwright end-to-end tests, run on WordPress 7.1.2 and 6.5.12.
+
 = 2.0.0 - 2025-11-12 =
-* **Major Update** - Complete rewrite for WordPress 6.7+ compatibility
-* Added: Comprehensive security improvements with proper nonce verification
-* Added: Rate limiting to prevent brute force attacks
-* Added: Advanced Ethereum signature verification
-* Added: Admin settings page with configuration options
-* Added: Activation, deactivation, and uninstall hooks
-* Added: Extensive WordPress hooks and filters for developers
-* Added: Better error handling and user feedback
-* Improved: WordPress coding standards compliance
-* Improved: PHPDoc documentation throughout
-* Improved: Sanitization and validation of all inputs
-* Improved: User interface and experience
-* Fixed: Security vulnerabilities in nonce handling
-* Fixed: Signature verification bypasses removed
+* Settings page, rate limiting, activation hooks, developer hooks, REST API.
 
 = 1.0.0 - 2024-01-01 =
-* Initial release
-* Basic MetaMask login functionality
-* User profile integration
-* Simple wallet linking
+* Initial release.
 
 == Upgrade Notice ==
 
-= 2.0.0 =
-Major security and feature update. Highly recommended for all users. Includes breaking changes - please review documentation before upgrading.
+= 3.0.0 =
+Major security and usability update. Wallet login now really verifies signatures. Settings migrate automatically. Wallets linked with 2.x must be confirmed once from the user's profile.
 
-== Development ==
+== Privacy ==
 
-= Requirements =
-
-* WordPress 6.0 or higher
-* PHP 7.4 or higher
-* MetaMask browser extension
-
-= For Developers =
-
-The plugin is designed to be developer-friendly with extensive hooks and filters. Check out the documentation at [https://stcchain.io/metamask-login](https://stcchain.io/metamask-login) for detailed developer guides.
-
-**GitHub Repository:** [https://github.com/stcchain/metamask-login-addon](https://github.com/stcchain/metamask-login-addon)
-
-= Contributing =
-
-Contributions are welcome! Please submit pull requests or open issues on our GitHub repository.
-
-== Privacy Policy ==
-
-This plugin stores wallet addresses in the WordPress user meta table. No data is sent to external services unless you implement custom verification methods. All authentication happens between the user's browser and your WordPress installation.
-
-= Data Collected =
-
-* Ethereum wallet addresses (stored in wp_usermeta)
-* Login attempt metadata (temporarily cached for rate limiting)
-
-= Data Sharing =
-
-* No data is shared with third parties by default
-* All data remains within your WordPress installation
-
-== Credits ==
-
-Developed by STC Chain
-Website: [https://stcchain.io](https://stcchain.io)
-
-== Support ==
-
-For support, please visit our [support forum](https://wordpress.org/support/plugin/metamask-login-addon/) or contact us through our website.
+The plugin stores each user's wallet address in the `wp_usermeta` table. Short-lived data (sign-in challenges for 5 minutes and rate-limit counters) is kept in transients. A strictly necessary cookie, `wp_metamask_challenge`, lasts up to 5 minutes during sign-in. No data is sent to outside services. The optional balance display in `[metamask_profile]` reads the balance through the visitor's own wallet.

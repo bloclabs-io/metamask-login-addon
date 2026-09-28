@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "metamask-login/login-button",
+	"version": "3.0.0",
+	"title": "MetaMask Login",
+	"category": "widgets",
+	"icon": "admin-network",
+	"description": "A \"Log in with MetaMask\" button. Logged-in visitors see who they are logged in as.",
+	"keywords": [ "metamask", "wallet", "web3", "login", "ethereum" ],
+	"textdomain": "metamask-login-addon",
+	"attributes": {
+		"buttonText": { "type": "string", "default": "" },
+		"redirect": { "type": "string", "default": "" },
+		"buttonStyle": { "type": "string", "enum": [ "", "dark", "orange", "light" ], "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"align": [ "left", "center", "right", "wide" ],
+		"spacing": { "margin": true, "padding": true }
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "metamask-login",
+	"style": "metamask-login"
+}

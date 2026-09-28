@@ -1,0 +1,7 @@
+/vendor/
+node_modules/
+/tests/e2e/test-results/
+/tests/e2e/playwright-report/
+.phpunit.result.cache
+*.zip
+.DS_Store
