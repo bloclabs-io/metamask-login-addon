@@ -1,0 +1,619 @@
+# Copyright (C) 2026 STC Chain
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: MetaMask Login Add-On 3.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/metamask-login-addon\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-28T05:34:31+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: metamask-login-addon\n"
+
+#. Plugin Name of the plugin
+#: metamask-login-addon.php
+msgid "MetaMask Login Add-On"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: metamask-login-addon.php
+msgid "https://github.com/bloclabs-io/metamask-login-addon"
+msgstr ""
+
+#. Description of the plugin
+#: metamask-login-addon.php
+msgid "Let people log in to WordPress with their MetaMask wallet — no passwords. Uses Sign-In with Ethereum (EIP-4361) with real on-server signature verification."
+msgstr ""
+
+#. Author of the plugin
+#: metamask-login-addon.php
+msgid "STC Chain"
+msgstr ""
+
+#. Author URI of the plugin
+#: metamask-login-addon.php
+msgid "https://stcchain.io"
+msgstr ""
+
+#: includes/class-metamask-admin.php:63
+#: includes/class-metamask-admin.php:64
+#: includes/class-metamask-admin.php:276
+msgid "MetaMask Login"
+msgstr ""
+
+#: includes/class-metamask-admin.php:117
+#: includes/class-metamask-admin.php:330
+#: includes/class-metamask-settings.php:79
+msgid "Log in with MetaMask"
+msgstr ""
+
+#: includes/class-metamask-admin.php:137
+msgid "MetaMask Login is active."
+msgstr ""
+
+#: includes/class-metamask-admin.php:138
+msgid "Connect your wallet and check the setup in under a minute."
+msgstr ""
+
+#: includes/class-metamask-admin.php:139
+msgid "Finish setup"
+msgstr ""
+
+#: includes/class-metamask-admin.php:158
+#: includes/class-metamask-admin.php:168
+msgid "Signature verification"
+msgstr ""
+
+#: includes/class-metamask-admin.php:159
+msgid "A 64-bit PHP build is required. Ask your host to switch to 64-bit PHP."
+msgstr ""
+
+#. translators: %d: milliseconds
+#: includes/class-metamask-admin.php:171
+#, php-format
+msgid "Self-test passed in %d ms. No extra PHP extensions needed."
+msgstr ""
+
+#: includes/class-metamask-admin.php:172
+msgid "Self-test failed. Check for a plugin filtering metamask_login_custom_signature_verify."
+msgstr ""
+
+#: includes/class-metamask-admin.php:181
+msgid "HTTPS"
+msgstr ""
+
+#: includes/class-metamask-admin.php:183
+msgid "Your site uses HTTPS."
+msgstr ""
+
+#: includes/class-metamask-admin.php:185
+msgid "Local development site — HTTPS is not required."
+msgstr ""
+
+#: includes/class-metamask-admin.php:186
+msgid "Use HTTPS so wallet sign-in cannot be intercepted and login cookies stay secure."
+msgstr ""
+
+#: includes/class-metamask-admin.php:192
+msgid "Login page button"
+msgstr ""
+
+#: includes/class-metamask-admin.php:194
+msgid "Shown on the WordPress login screen."
+msgstr ""
+
+#: includes/class-metamask-admin.php:195
+msgid "Hidden. Turn on \"Show on the login screen\" below, or use the block / shortcode."
+msgstr ""
+
+#: includes/class-metamask-admin.php:203
+msgid "Your wallet"
+msgstr ""
+
+#. translators: %s: short wallet address
+#: includes/class-metamask-admin.php:206
+#, php-format
+msgid "Connected (%s). You can log in with MetaMask."
+msgstr ""
+
+#: includes/class-metamask-admin.php:207
+msgid "Not connected yet — use the button in step 1 above."
+msgstr ""
+
+#: includes/class-metamask-admin.php:277
+msgid "Passwordless, phishing-resistant login with Sign-In with Ethereum."
+msgstr ""
+
+#: includes/class-metamask-admin.php:282
+msgid "Get started in 3 steps"
+msgstr ""
+
+#: includes/class-metamask-admin.php:286
+msgid "Connect your wallet to your account"
+msgstr ""
+
+#: includes/class-metamask-admin.php:287
+msgid "MetaMask will ask you to sign a message. It is free and does not send a transaction."
+msgstr ""
+
+#: includes/class-metamask-admin.php:296
+msgid "Choose where the button appears"
+msgstr ""
+
+#: includes/class-metamask-admin.php:298
+msgid "The button is added to the WordPress login screen automatically. To add it to any page, use the \"MetaMask Login\" block or a shortcode:"
+msgstr ""
+
+#: includes/class-metamask-admin.php:302
+#: includes/class-metamask-admin.php:306
+msgid "Copy"
+msgstr ""
+
+#: includes/class-metamask-admin.php:312
+msgid "Try it"
+msgstr ""
+
+#: includes/class-metamask-admin.php:313
+msgid "Open the login screen in a private window and click the MetaMask button."
+msgstr ""
+
+#: includes/class-metamask-admin.php:314
+msgid "Open login screen"
+msgstr ""
+
+#: includes/class-metamask-admin.php:314
+msgid "(opens in a new tab)"
+msgstr ""
+
+#: includes/class-metamask-admin.php:325
+msgid "Login button"
+msgstr ""
+
+#: includes/class-metamask-admin.php:326
+msgid "Show on the login screen"
+msgstr ""
+
+#: includes/class-metamask-admin.php:326
+msgid "Adds the button below the username and password form on wp-login.php."
+msgstr ""
+
+#: includes/class-metamask-admin.php:329
+#: blocks/login-button/index.js:34
+msgid "Button text"
+msgstr ""
+
+#: includes/class-metamask-admin.php:334
+msgid "Button style"
+msgstr ""
+
+#: includes/class-metamask-admin.php:338
+#: blocks/login-button/index.js:48
+msgid "Dark"
+msgstr ""
+
+#: includes/class-metamask-admin.php:339
+#: blocks/login-button/index.js:49
+msgid "MetaMask orange"
+msgstr ""
+
+#: includes/class-metamask-admin.php:340
+#: blocks/login-button/index.js:50
+msgid "Light"
+msgstr ""
+
+#: includes/class-metamask-admin.php:353
+msgid "Preview"
+msgstr ""
+
+#: includes/class-metamask-admin.php:368
+msgid "After login, go to"
+msgstr ""
+
+#: includes/class-metamask-admin.php:370
+msgid "Leave empty to behave like normal WordPress logins (Dashboard, or the page the user came from)."
+msgstr ""
+
+#: includes/class-metamask-admin.php:375
+msgid "New users"
+msgstr ""
+
+#: includes/class-metamask-admin.php:376
+msgid "Create accounts for new wallets"
+msgstr ""
+
+#: includes/class-metamask-admin.php:376
+msgid "When a wallet that is not connected to any account signs in, create a new account for it automatically."
+msgstr ""
+
+#: includes/class-metamask-admin.php:378
+msgid "Role for new accounts"
+msgstr ""
+
+#: includes/class-metamask-admin.php:384
+msgid "Roles that can manage the site or other users are never offered."
+msgstr ""
+
+#: includes/class-metamask-admin.php:389
+msgid "Security"
+msgstr ""
+
+#: includes/class-metamask-admin.php:390
+msgid "Limit failed attempts"
+msgstr ""
+
+#: includes/class-metamask-admin.php:390
+msgid "Temporarily block an IP address after repeated failed wallet logins."
+msgstr ""
+
+#: includes/class-metamask-admin.php:392
+msgid "Allow"
+msgstr ""
+
+#: includes/class-metamask-admin.php:394
+msgid "failed attempts per"
+msgstr ""
+
+#: includes/class-metamask-admin.php:398
+msgid "1 minute"
+msgstr ""
+
+#: includes/class-metamask-admin.php:399
+msgid "5 minutes"
+msgstr ""
+
+#: includes/class-metamask-admin.php:400
+msgid "15 minutes"
+msgstr ""
+
+#: includes/class-metamask-admin.php:401
+msgid "1 hour"
+msgstr ""
+
+#: includes/class-metamask-admin.php:402
+msgid "24 hours"
+msgstr ""
+
+#. translators: %d: seconds
+#: includes/class-metamask-admin.php:406
+#, php-format
+msgid "%d seconds"
+msgstr ""
+
+#: includes/class-metamask-admin.php:416
+msgid "Sign-in message"
+msgstr ""
+
+#. translators: %s: site name
+#: includes/class-metamask-admin.php:417
+#: includes/class-metamask-authentication.php:344
+#, php-format
+msgid "Sign in to %s. This request will not trigger a blockchain transaction or cost any gas fees."
+msgstr ""
+
+#. translators: %s: site name
+#: includes/class-metamask-admin.php:418
+msgid "The sentence users see in MetaMask when signing in. Your domain, a one-time code and an expiry time are always added."
+msgstr ""
+
+#: includes/class-metamask-admin.php:423
+msgid "Data"
+msgstr ""
+
+#: includes/class-metamask-admin.php:424
+msgid "Delete wallet links when the plugin is deleted"
+msgstr ""
+
+#: includes/class-metamask-admin.php:424
+msgid "Off by default, so reinstalling keeps every user's connected wallet."
+msgstr ""
+
+#: includes/class-metamask-admin.php:427
+msgid "Save changes"
+msgstr ""
+
+#: includes/class-metamask-admin.php:432
+msgid "Status"
+msgstr ""
+
+#: includes/class-metamask-admin.php:437
+msgid "OK:"
+msgstr ""
+
+#: includes/class-metamask-admin.php:437
+msgid "Needs attention:"
+msgstr ""
+
+#. translators: %s: number of users
+#: includes/class-metamask-admin.php:450
+#, php-format
+msgid "%s user has a connected wallet."
+msgid_plural "%s users have a connected wallet."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-metamask-admin.php:454
+msgid "View users"
+msgstr ""
+
+#: includes/class-metamask-admin.php:459
+msgid "Shortcode options"
+msgstr ""
+
+#: includes/class-metamask-admin.php:462
+msgid "Login button. All attributes are optional."
+msgstr ""
+
+#: includes/class-metamask-admin.php:464
+msgid "Lets logged-in users connect or disconnect their wallet from the front end."
+msgstr ""
+
+#: includes/class-metamask-admin.php:466
+msgid "Full documentation"
+msgstr ""
+
+#: includes/class-metamask-api.php:42
+msgid "Wallet address."
+msgstr ""
+
+#: includes/class-metamask-api.php:48
+msgid "Chain id reported by the wallet."
+msgstr ""
+
+#: includes/class-metamask-api.php:54
+msgid "What the challenge will be used for."
+msgstr ""
+
+#: includes/class-metamask-api.php:60
+msgid "personal_sign signature."
+msgstr ""
+
+#: includes/class-metamask-api.php:66
+msgid "Challenge nonce returned by /nonce."
+msgstr ""
+
+#: includes/class-metamask-api.php:72
+msgid "Deprecated: the signed message. Send `nonce` instead."
+msgstr ""
+
+#: includes/class-metamask-api.php:159
+#: includes/class-metamask-authentication.php:162
+#: includes/class-metamask-user-profile.php:178
+msgid "Please log in first."
+msgstr ""
+
+#: includes/class-metamask-api.php:197
+#: includes/class-metamask-authentication.php:198
+msgid "Login successful!"
+msgstr ""
+
+#: includes/class-metamask-api.php:225
+#: includes/class-metamask-user-profile.php:215
+#: metamask-login-addon.php:216
+msgid "Wallet connected to your account."
+msgstr ""
+
+#: includes/class-metamask-api.php:242
+#: includes/class-metamask-user-profile.php:239
+#: metamask-login-addon.php:217
+msgid "Wallet disconnected."
+msgstr ""
+
+#: includes/class-metamask-authentication.php:86
+msgid "or"
+msgstr ""
+
+#: includes/class-metamask-authentication.php:120
+#: includes/class-metamask-user-profile.php:181
+msgid "Your session has expired. Please reload the page and try again."
+msgstr ""
+
+#: includes/class-metamask-authentication.php:239
+#: includes/class-metamask-authentication.php:413
+msgid "Invalid wallet address."
+msgstr ""
+
+#: includes/class-metamask-authentication.php:264
+msgid "Could not start a secure sign-in. Please reload the page and try again."
+msgstr ""
+
+#. translators: %s: site name
+#: includes/class-metamask-authentication.php:339
+#, php-format
+msgid "Connect this wallet to your account on %s."
+msgstr ""
+
+#: includes/class-metamask-authentication.php:408
+msgid "This sign-in request has expired or was already used. Please try again."
+msgstr ""
+
+#: includes/class-metamask-authentication.php:449
+msgid "The signature could not be verified. Please try again."
+msgstr ""
+
+#: includes/class-metamask-authentication.php:524
+msgid "This wallet is not connected to an account yet. Log in with your password, then connect your wallet from your profile."
+msgstr ""
+
+#: includes/class-metamask-authentication.php:550
+msgid "Your account has been marked as a spammer."
+msgstr ""
+
+#: includes/class-metamask-authentication.php:561
+msgid "Login denied."
+msgstr ""
+
+#: includes/class-metamask-authentication.php:796
+#: includes/class-metamask-user-profile.php:99
+msgid "Too many attempts. Please wait a few minutes and try again."
+msgstr ""
+
+#: includes/class-metamask-user-profile.php:111
+msgid "This wallet is already connected to a different account."
+msgstr ""
+
+#: includes/class-metamask-user-profile.php:234
+msgid "You are not allowed to edit this user."
+msgstr ""
+
+#: includes/class-metamask-user-profile.php:269
+#: includes/class-metamask-user-profile.php:373
+#: templates/user-profile.php:24
+msgid "MetaMask Wallet"
+msgstr ""
+
+#: includes/class-metamask-user-profile.php:272
+msgid "Wallet login"
+msgstr ""
+
+#: includes/class-metamask-user-profile.php:302
+msgid "Connected"
+msgstr ""
+
+#: includes/class-metamask-user-profile.php:307
+#: includes/class-metamask-user-profile.php:392
+msgid "Not connected"
+msgstr ""
+
+#. translators: %s: wallet address
+#: includes/class-metamask-user-profile.php:316
+#, php-format
+msgid "An earlier version saved %s without checking it. Connect it again to confirm you own it."
+msgstr ""
+
+#: includes/class-metamask-user-profile.php:325
+msgid "Connect your MetaMask wallet to log in with one click — no password needed."
+msgstr ""
+
+#: includes/class-metamask-user-profile.php:326
+msgid "This user has not connected a wallet. Only they can connect one, because it requires their signature."
+msgstr ""
+
+#: includes/class-metamask-user-profile.php:340
+msgid "Switch wallet"
+msgstr ""
+
+#: includes/class-metamask-user-profile.php:340
+msgid "Connect MetaMask"
+msgstr ""
+
+#: includes/class-metamask-user-profile.php:349
+msgid "Disconnect wallet"
+msgstr ""
+
+#: metamask-login-addon.php:211
+msgid "Connecting to your wallet…"
+msgstr ""
+
+#: metamask-login-addon.php:212
+msgid "Preparing a secure sign-in message…"
+msgstr ""
+
+#: metamask-login-addon.php:213
+msgid "Please confirm the signature request in MetaMask."
+msgstr ""
+
+#: metamask-login-addon.php:214
+msgid "Verifying your signature…"
+msgstr ""
+
+#: metamask-login-addon.php:215
+msgid "Success! Logging you in…"
+msgstr ""
+
+#: metamask-login-addon.php:218
+msgid "Disconnect this wallet? It will no longer be able to log in to this account."
+msgstr ""
+
+#: metamask-login-addon.php:219
+msgid "MetaMask was not detected in this browser."
+msgstr ""
+
+#: metamask-login-addon.php:220
+msgid "Install MetaMask"
+msgstr ""
+
+#: metamask-login-addon.php:221
+msgid "Open in the MetaMask app"
+msgstr ""
+
+#: metamask-login-addon.php:222
+msgid "You cancelled the request in MetaMask."
+msgstr ""
+
+#: metamask-login-addon.php:223
+msgid "MetaMask already has a request waiting. Open the MetaMask extension to continue."
+msgstr ""
+
+#: metamask-login-addon.php:224
+msgid "No account was shared. Unlock MetaMask and try again."
+msgstr ""
+
+#: metamask-login-addon.php:225
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: metamask-login-addon.php:226
+msgid "Could not reach the site. Check your connection and try again."
+msgstr ""
+
+#: metamask-login-addon.php:227
+msgid "Your active MetaMask account changed."
+msgstr ""
+
+#: metamask-login-addon.php:228
+msgid "Copied!"
+msgstr ""
+
+#: metamask-login-addon.php:325
+msgid "Please log in to manage your wallet."
+msgstr ""
+
+#: metamask-login-addon.php:438
+msgid "Settings"
+msgstr ""
+
+#. translators: %s: user display name
+#: templates/login-button.php:33
+#, php-format
+msgid "You are logged in as %s."
+msgstr ""
+
+#: templates/login-button.php:37
+msgid "Log out"
+msgstr ""
+
+#: templates/user-profile.php:31
+msgid "Balance:"
+msgstr ""
+
+#: templates/user-profile.php:32
+msgid "Open MetaMask to view your balance."
+msgstr ""
+
+#: blocks/login-button/index.js:32
+msgid "Button"
+msgstr ""
+
+#: blocks/login-button/index.js:35
+msgid "Leave empty to use the text from Settings → MetaMask Login."
+msgstr ""
+
+#: blocks/login-button/index.js:44
+msgid "Style"
+msgstr ""
+
+#: blocks/login-button/index.js:47
+msgid "Default (from settings)"
+msgstr ""
+
+#: blocks/login-button/index.js:59
+msgid "Redirect after login"
+msgstr ""
+
+#: blocks/login-button/index.js:60
+msgid "Optional. Same-site URL, e.g. /my-account. Defaults to the current page."
+msgstr ""

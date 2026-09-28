@@ -1,0 +1,23 @@
+{
+	"name": "bloclabs-io/metamask-login-addon",
+	"description": "WordPress plugin: log in with MetaMask using Sign-In with Ethereum.",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": ">=7.4"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^9.6"
+	},
+	"autoload-dev": {
+		"classmap": [ "includes/crypto/", "includes/utils/" ]
+	},
+	"scripts": {
+		"test": "phpunit",
+		"lint": "find . -name '*.php' -not -path './vendor/*' -not -path './node_modules/*' -print0 | xargs -0 -n1 php -l"
+	},
+	"config": {
+		"platform": { "php": "7.4.33" },
+		"sort-packages": true
+	}
+}
